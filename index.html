@@ -31,16 +31,12 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
-    /* ── NOISE TEXTURE OVERLAY ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
       pointer-events: none; z-index: 9999; opacity: 0.4;
     }
-
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -66,8 +62,6 @@
     .nav-links a:hover { color: var(--text); background: var(--border); }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
-
-    /* ── HERO ── */
     #inicio {
       min-height: 100vh;
       display: flex; align-items: center;
@@ -88,9 +82,7 @@
       background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero-inner {
-      max-width: 900px; margin: 0 auto; position: relative; text-align: center;
-    }
+    .hero-inner { max-width: 900px; margin: 0 auto; position: relative; text-align: center; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
@@ -139,10 +131,7 @@
     .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--text); }
     .stat-num span { color: var(--accent); }
     .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
-
     @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-
-    /* ── SECTIONS ── */
     section { padding: 6rem 2rem; }
     .container { max-width: 1100px; margin: 0 auto; }
     .section-label {
@@ -157,18 +146,13 @@
       letter-spacing: -0.02em; margin-bottom: 1rem;
     }
     .section-desc { color: var(--muted); max-width: 560px; font-weight: 300; margin-bottom: 3rem; }
-
-    /* ── SOBRE ── */
     #sobre { background: var(--surface); }
     .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .sobre-card {
       background: var(--card-bg); border: 1px solid var(--border);
       border-radius: 16px; padding: 2rem;
     }
-    .sobre-card h3 {
-      font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
-      margin-bottom: 0.75rem; color: var(--accent2);
-    }
+    .sobre-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--accent2); }
     .sobre-card p { color: var(--muted); font-size: 0.95rem; }
     .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
     .tag {
@@ -178,8 +162,6 @@
       border: 1px solid rgba(59,130,246,0.2);
     }
     .sobre-info { display: flex; flex-direction: column; gap: 1.5rem; }
-
-    /* ── EQUIPE ── */
     #equipe { background: var(--bg); }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
     .team-card {
@@ -203,8 +185,6 @@
     .team-card.d .team-avatar { background: linear-gradient(135deg, var(--accent3), #65a30d); }
     .team-card.e .team-avatar { background: linear-gradient(135deg, #f472b6, #db2777); }
     .team-card.f .team-avatar { background: linear-gradient(135deg, #fb923c, #ea580c); }
-
-    /* ── DIREITOS ELEITORAIS ── */
     #direitos { background: var(--surface); }
     .direitos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
     .direito-card {
@@ -212,19 +192,14 @@
       border-radius: 16px; padding: 2rem; position: relative; overflow: hidden;
       transition: all 0.3s;
     }
-    .direito-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    }
+    .direito-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
     .direito-card.blue::before { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
     .direito-card.green::before { background: linear-gradient(90deg, var(--accent3), #34d399); }
     .direito-card.amber::before { background: linear-gradient(90deg, var(--gold), #f97316); }
     .direito-card.red::before { background: linear-gradient(90deg, var(--danger), #fb923c); }
     .direito-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.12); }
     .direito-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .direito-card h3 {
-      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
+    .direito-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
     .direito-card p, .direito-card li { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
     .direito-card ul { list-style: none; padding: 0; }
     .direito-card ul li { padding: 0.2rem 0; }
@@ -233,7 +208,6 @@
     .direito-card ul li.warn::before { content: '⚠ '; color: var(--gold); }
     .direito-card ol { padding-left: 1.2rem; }
     .direito-card ol li { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.35rem; }
-
     .penalidades-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
     .penalidade-item {
       background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.15);
@@ -241,8 +215,6 @@
       font-size: 0.85rem; color: var(--muted);
     }
     .penalidade-item strong { display: block; color: var(--danger); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.3rem; }
-
-    /* ── ESTRUTURA ELEITORAL ── */
     .estrutura-flow { display: flex; flex-direction: column; gap: 0; max-width: 600px; margin: 2rem auto 0; }
     .estrutura-step {
       display: flex; align-items: flex-start; gap: 1.25rem;
@@ -260,8 +232,6 @@
     }
     .estrutura-text h4 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
     .estrutura-text p { font-size: 0.85rem; color: var(--muted); }
-
-    /* ── CARTILHA ── */
     #cartilha { background: var(--bg); }
     .cartilha-inner {
       background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(34,211,238,0.05));
@@ -273,21 +243,7 @@
     .cartilha-text h2 { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; margin-bottom: 0.75rem; }
     .cartilha-text p { color: var(--muted); max-width: 440px; }
     .cartilha-icon { font-size: 5rem; opacity: 0.8; }
-
-    /* ── PESQUISA ── */
     #pesquisa { background: var(--surface); }
-    .pesquisa-inner {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
-    }
-    .form-embed-box {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: 16px; overflow: hidden; min-height: 500px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 3rem 2rem; text-align: center;
-    }
-    .form-placeholder-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
-    .form-placeholder-text { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .pesquisa-info { display: flex; flex-direction: column; gap: 1.25rem; }
     .info-card {
       background: var(--card-bg); border: 1px solid var(--border);
       border-radius: 12px; padding: 1.25rem 1.5rem;
@@ -299,13 +255,105 @@
 
     /* ── RESULTADOS ── */
     #resultados { background: var(--bg); }
-    .graficos-placeholder {
-      background: var(--card-bg); border: 1px dashed rgba(255,255,255,0.1);
-      border-radius: 16px; padding: 4rem 2rem;
-      text-align: center; color: var(--muted);
+
+    /* Grupo de gráficos com título */
+    .graficos-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      font-size: 0.72rem;
+      margin-bottom: 1.25rem;
+      padding-left: 0.75rem;
+      border-left: 3px solid var(--accent2);
     }
-    .graficos-placeholder .icon { font-size: 3rem; opacity: 0.3; margin-bottom: 1rem; }
-    .graficos-placeholder p { font-size: 0.9rem; }
+    .graficos-group { margin-bottom: 3rem; }
+
+    /* Grid de gráficos */
+    .graficos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+      gap: 1.5rem;
+    }
+    .grafico-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .grafico-card:hover {
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-3px);
+    }
+    .grafico-label {
+      padding: 0.85rem 1.25rem 0;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+    .grafico-card iframe {
+      display: block;
+      width: 100%;
+      height: 320px;
+      border: none;
+      background: transparent;
+    }
+    /* Card único (largura total) */
+    .grafico-card.full { grid-column: 1 / -1; }
+    .grafico-card.full iframe { height: 340px; }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos { background: var(--surface); }
+    .depoimentos-header { margin-bottom: 2.5rem; }
+    .depoimentos-marquee-wrap {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .depoimentos-track {
+      display: flex;
+      gap: 1.25rem;
+      width: max-content;
+      animation: marquee 60s linear infinite;
+    }
+    .depoimentos-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .depoimento-card {
+      flex-shrink: 0;
+      width: 320px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .depoimento-card::before {
+      content: '"';
+      position: absolute; top: 0.75rem; right: 1.25rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 4rem; font-weight: 800;
+      color: var(--accent); opacity: 0.12;
+      line-height: 1;
+    }
+    .depoimento-text {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-style: italic;
+    }
+    .depoimento-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      margin-top: 1rem;
+      opacity: 0.5;
+    }
 
     /* ── CONTATOS ── */
     #contatos { background: var(--surface); }
@@ -326,8 +374,6 @@
       font-size: 0.72rem; color: var(--muted); background: var(--border);
       padding: 0.25rem 0.6rem; border-radius: 99px; margin-top: 0.5rem;
     }
-
-    /* ── FOOTER ── */
     footer {
       background: var(--bg); border-top: 1px solid var(--border);
       padding: 2.5rem 2rem; text-align: center;
@@ -337,8 +383,6 @@
     .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
     .footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--accent2); }
-
-    /* ── BACK TO TOP ── */
     .back-top {
       position: fixed; bottom: 2rem; right: 2rem;
       width: 44px; height: 44px; background: var(--accent);
@@ -350,22 +394,21 @@
     }
     .back-top.visible { opacity: 1; pointer-events: all; }
     .back-top:hover { transform: translateY(-2px); background: #2563eb; }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); padding: 1rem; border-bottom: 1px solid var(--border); }
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
-      .sobre-grid, .pesquisa-inner { grid-template-columns: 1fr; }
+      .sobre-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 1.5rem; }
       .cartilha-inner { flex-direction: column; text-align: center; }
       .cartilha-icon { display: none; }
+      .graficos-grid { grid-template-columns: 1fr; }
+      .grafico-card iframe { height: 280px; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#inicio" class="nav-logo">C&D <span>UNIMT</span></a>
   <ul class="nav-links" id="navLinks">
@@ -376,6 +419,7 @@
     <li><a href="#cartilha">Cartilha</a></li>
     <li><a href="#pesquisa">Pesquisa</a></li>
     <li><a href="#resultados">Resultados</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
     <li><a href="#contatos">Contatos</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -468,17 +512,8 @@
     <span class="section-label">Equipe</span>
     <h2 class="section-title">Quem está por trás do projeto</h2>
     <p class="section-desc">Alunos do curso de Engenharia Agronômica divididos em grupos com responsabilidades específicas.</p>
-    <!-- 
-      🛠️ PARA EDITAR: Substitua os nomes abaixo pelos nomes reais dos alunos.
-      Troque as iniciais no "data-initials" para as iniciais de cada aluno.
-      O grupo do professor já está configurado.
-    -->
     <div class="team-grid">
-      <div class="team-card professor">
-        <div class="team-avatar">LV</div>
-        <div class="team-name">Prof. Me. Luiz Vieira</div>
-        <div class="team-role">Orientador do Projeto</div>
-      </div>
+      <div class="team-card professor"><div class="team-avatar">LV</div><div class="team-name">Prof. Me. Luiz Vieira</div><div class="team-role">Orientador do Projeto</div></div>
       <div class="team-card a"><div class="team-avatar">AM</div><div class="team-name">Anabely Mendes dos Santos</div><div class="team-role">Discente</div></div>
       <div class="team-card b"><div class="team-avatar">FF</div><div class="team-name">Felipe Frolich Fusco</div><div class="team-role">Discente</div></div>
       <div class="team-card c"><div class="team-avatar">LL</div><div class="team-name">Larissa Lais Dallabrida</div><div class="team-role">Discente</div></div>
@@ -510,10 +545,7 @@
     <span class="section-label">Direitos Eleitorais</span>
     <h2 class="section-title">O que você precisa saber</h2>
     <p class="section-desc">Informação direta e sem enrolação — como você explicaria para um amigo de 18 anos. Fonte: TSE e Código Eleitoral.</p>
-
     <div class="direitos-grid">
-
-      <!-- BLOCO 1 – Título de Eleitor -->
       <div class="direito-card blue">
         <div class="direito-icon">🪪</div>
         <h3>O que é o Título de Eleitor?</h3>
@@ -526,8 +558,6 @@
         </ul>
         <p style="margin-top:1rem; font-size:0.82rem; color:var(--accent3);">✅ Gratuito para todos os brasileiros</p>
       </div>
-
-      <!-- BLOCO 2 – Como tirar -->
       <div class="direito-card green">
         <div class="direito-icon">📝</div>
         <h3>Como tirar o Título de Eleitor</h3>
@@ -540,8 +570,6 @@
           <li>Baixe o <strong>e-Título</strong> e tenha o documento no celular!</li>
         </ol>
       </div>
-
-      <!-- BLOCO 3 – O que você perde -->
       <div class="direito-card red">
         <div class="direito-icon">⚠️</div>
         <h3>O que você PERDE sem o título</h3>
@@ -555,34 +583,18 @@
           <li class="bad">Não pode celebrar contratos com o poder público</li>
         </ul>
       </div>
-
-      <!-- BLOCO 4 – Quem não vota -->
       <div class="direito-card amber">
         <div class="direito-icon">🗳️</div>
         <h3>E quem não vota?</h3>
         <p style="margin-bottom:1rem;">Votar é obrigatório dos 18 aos 70 anos. Faltou sem justificar?</p>
         <div class="penalidades-grid" style="margin-top:0;">
-          <div class="penalidade-item">
-            <strong>💸 Multa</strong>
-            R$ 3,51 por eleição perdida — acumula!
-          </div>
-          <div class="penalidade-item">
-            <strong>🔒 Situação irregular</strong>
-            Bloqueio de serviços públicos
-          </div>
-          <div class="penalidade-item">
-            <strong>🚫 Concursos</strong>
-            Impedimento de inscrição
-          </div>
-          <div class="penalidade-item">
-            <strong>📄 Certidão</strong>
-            Sem quitação eleitoral para documentos
-          </div>
+          <div class="penalidade-item"><strong>💸 Multa</strong>R$ 3,51 por eleição perdida — acumula!</div>
+          <div class="penalidade-item"><strong>🔒 Situação irregular</strong>Bloqueio de serviços públicos</div>
+          <div class="penalidade-item"><strong>🚫 Concursos</strong>Impedimento de inscrição</div>
+          <div class="penalidade-item"><strong>📄 Certidão</strong>Sem quitação eleitoral para documentos</div>
         </div>
         <p style="margin-top:1rem; font-size:0.82rem; color:var(--muted);">⏱️ Prazo para regularizar: até 1 ano após cada eleição</p>
       </div>
-
-      <!-- BLOCO 5 – Justificar ausência -->
       <div class="direito-card blue">
         <div class="direito-icon">📱</div>
         <h3>Não pôde votar? Justifique!</h3>
@@ -594,8 +606,6 @@
           <li>Se fora do país: no consulado ou embaixada</li>
         </ul>
       </div>
-
-      <!-- BLOCO 6 – Transferência -->
       <div class="direito-card green">
         <div class="direito-icon">📍</div>
         <h3>Mudou de cidade? Transfira!</h3>
@@ -607,8 +617,6 @@
           <li>Requisito: <strong style="color:var(--text)">mínimo 3 meses</strong> de residência no novo município</li>
         </ul>
       </div>
-
-      <!-- BLOCO 7 – e-Título -->
       <div class="direito-card amber">
         <div class="direito-icon">📲</div>
         <h3>O que é o e-Título?</h3>
@@ -622,44 +630,17 @@
         </ul>
         <p style="margin-top:1rem; font-size:0.82rem; color:var(--accent3);">📲 Gratuito — Android & iOS</p>
       </div>
-
-      <!-- BLOCO 8 – Estrutura -->
-      <div class="direito-card blue" style="grid-column: span 1;">
+      <div class="direito-card blue">
         <div class="direito-icon">🏛️</div>
         <h3>Estrutura da Justiça Eleitoral</h3>
         <p style="margin-bottom:1.25rem; font-size:0.85rem;">Como funciona a Justiça Eleitoral no Brasil (Fonte: TSE)</p>
         <div class="estrutura-flow">
-          <div class="estrutura-step">
-            <div class="estrutura-num">1</div>
-            <div class="estrutura-text">
-              <h4>TSE — Tribunal Superior Eleitoral</h4>
-              <p>Instância máxima · Brasília/DF</p>
-            </div>
-          </div>
-          <div class="estrutura-step">
-            <div class="estrutura-num">2</div>
-            <div class="estrutura-text">
-              <h4>TREs — Tribunais Regionais Eleitorais</h4>
-              <p>Um por estado · TRE-MT em Cuiabá/MT</p>
-            </div>
-          </div>
-          <div class="estrutura-step">
-            <div class="estrutura-num">3</div>
-            <div class="estrutura-text">
-              <h4>Zonas Eleitorais</h4>
-              <p>Cartórios locais · 23ª Zona Eleitoral – Água Boa/MT</p>
-            </div>
-          </div>
-          <div class="estrutura-step">
-            <div class="estrutura-num">4</div>
-            <div class="estrutura-text">
-              <h4>Seções Eleitorais</h4>
-              <p>Locais de votação dentro de cada zona</p>
-            </div>
-          </div>
+          <div class="estrutura-step"><div class="estrutura-num">1</div><div class="estrutura-text"><h4>TSE — Tribunal Superior Eleitoral</h4><p>Instância máxima · Brasília/DF</p></div></div>
+          <div class="estrutura-step"><div class="estrutura-num">2</div><div class="estrutura-text"><h4>TREs — Tribunais Regionais Eleitorais</h4><p>Um por estado · TRE-MT em Cuiabá/MT</p></div></div>
+          <div class="estrutura-step"><div class="estrutura-num">3</div><div class="estrutura-text"><h4>Zonas Eleitorais</h4><p>Cartórios locais · 23ª Zona Eleitoral – Água Boa/MT</p></div></div>
+          <div class="estrutura-step"><div class="estrutura-num">4</div><div class="estrutura-text"><h4>Seções Eleitorais</h4><p>Locais de votação dentro de cada zona</p></div></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -675,10 +656,6 @@
           Material completo desenvolvido pelo Grupo 3 do projeto, com linguagem acessível e visual
           moderno. Baixe gratuitamente, compartilhe com amigos e familiares!
         </p>
-        <!--
-          🛠️ PARA EDITAR: Substitua o href abaixo pelo link real do PDF da cartilha no Google Drive.
-          Exemplo: href="https://drive.google.com/file/d/SEU_ID_AQUI/view"
-        -->
         <a href="#" class="btn btn-primary" style="font-size:0.95rem; padding: 0.9rem 2rem;">
           ⬇️ Download da Cartilha (PDF)
         </a>
@@ -696,48 +673,12 @@
     <h2 class="section-title">Como a pesquisa foi realizada</h2>
     <p class="section-desc">Entrevistas conduzidas pelos alunos do curso de Engenharia Agronômica da UNIMT diretamente com a comunidade de Água Boa/MT e região.</p>
     <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:1.25rem;">
-      <div class="info-card">
-        <div class="info-card-icon">🎯</div>
-        <div>
-          <h4>Objetivo</h4>
-          <p>Mapear o nível de conhecimento sobre direitos eleitorais entre jovens universitários e da comunidade local.</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">👥</div>
-        <div>
-          <h4>Metodologia</h4>
-          <p>Entrevistas presenciais conduzidas individualmente pelos discentes do projeto, com questionário estruturado.</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">📍</div>
-        <div>
-          <h4>Local de coleta</h4>
-          <p>Água Boa/MT e região — campus da UNIMT e comunidade em geral.</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">🔒</div>
-        <div>
-          <h4>Ética e privacidade</h4>
-          <p>Dados coletados de forma agregada para fins acadêmicos. Nenhuma informação pessoal dos entrevistados é divulgada.</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">📊</div>
-        <div>
-          <h4>Resultados</h4>
-          <p>Os gráficos com os resultados consolidados estão disponíveis na seção <a href="#resultados" style="color:var(--accent); font-weight:600;">Resultados</a> deste site.</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">🎓</div>
-        <div>
-          <h4>Equipe de campo</h4>
-          <p>21 discentes do 3º período de Engenharia Agronômica, orientados pelo Prof. Me. Luiz Vieira.</p>
-        </div>
-      </div>
+      <div class="info-card"><div class="info-card-icon">🎯</div><div><h4>Objetivo</h4><p>Mapear o nível de conhecimento sobre direitos eleitorais entre jovens universitários e da comunidade local.</p></div></div>
+      <div class="info-card"><div class="info-card-icon">👥</div><div><h4>Metodologia</h4><p>Entrevistas presenciais conduzidas individualmente pelos discentes do projeto, com questionário estruturado.</p></div></div>
+      <div class="info-card"><div class="info-card-icon">📍</div><div><h4>Local de coleta</h4><p>Água Boa/MT e região — campus da UNIMT e comunidade em geral.</p></div></div>
+      <div class="info-card"><div class="info-card-icon">🔒</div><div><h4>Ética e privacidade</h4><p>Dados coletados de forma agregada para fins acadêmicos. Nenhuma informação pessoal dos entrevistados é divulgada.</p></div></div>
+      <div class="info-card"><div class="info-card-icon">📊</div><div><h4>Resultados</h4><p>Os gráficos com os resultados consolidados estão disponíveis na seção <a href="#resultados" style="color:var(--accent); font-weight:600;">Resultados</a> deste site.</p></div></div>
+      <div class="info-card"><div class="info-card-icon">🎓</div><div><h4>Equipe de campo</h4><p>21 discentes do 3º período de Engenharia Agronômica, orientados pelo Prof. Me. Luiz Vieira.</p></div></div>
     </div>
   </div>
 </section>
@@ -747,33 +688,109 @@
   <div class="container">
     <span class="section-label">Resultados da Pesquisa</span>
     <h2 class="section-title">O que os dados dizem</h2>
-    <p class="section-desc">Visualize os resultados em tempo real conforme a pesquisa é preenchida. Gráficos atualizados automaticamente via Google Sheets.</p>
+    <p class="section-desc">Gráficos atualizados automaticamente via Google Sheets conforme novos formulários são preenchidos.</p>
 
-    <!--
-      🛠️ PARA EDITAR — OPÇÃO A (Google Sheets + Charts embutidos):
-      Substitua os placeholders abaixo por iframes com os gráficos publicados do Google Sheets.
-      No Sheets: Inserir > Gráfico → Menu do gráfico → Publicar gráfico → Copie o iframe.
+    <!-- GRUPO 1: Perfil dos entrevistados -->
+    <div class="graficos-group">
+      <div class="graficos-section-title">Perfil dos entrevistados</div>
+      <div class="graficos-grid">
 
-      🛠️ PARA EDITAR — OPÇÃO B (Looker Studio):
-      Crie um relatório no Looker Studio (lookerstudio.google.com) conectando ao Sheets,
-      então incorpore o iframe do relatório completo aqui.
-    -->
-    <div class="graficos-placeholder">
-      <div class="icon">📊</div>
-      <p><strong style="color:var(--text);">Os gráficos aparecerão aqui</strong><br>
-      após a coleta de dados e conexão com o Google Sheets.<br>
-      <span style="font-size:0.82rem; color: var(--accent);">Veja o guia técnico abaixo para configurar a integração.</span></p>
+        <div class="grafico-card">
+          <div class="grafico-label">Faixa etária</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=750569248&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Gênero</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=1190062672&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Escolaridade</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=577554780&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Moradia</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=1856118740&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card full">
+          <div class="grafico-label">Município de residência</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=1798203041&format=interactive" loading="lazy"></iframe>
+        </div>
+
+      </div>
     </div>
 
-    <!--
-      EXEMPLO de como ficará com gráficos reais:
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem; margin-top:2rem;">
-        <iframe width="100%" height="371" seamless frameborder="0" scrolling="no"
-          src="LINK_DO_GRAFICO_SHEETS_1"></iframe>
-        <iframe width="100%" height="371" seamless frameborder="0" scrolling="no"
-          src="LINK_DO_GRAFICO_SHEETS_2"></iframe>
+    <!-- GRUPO 2: Conhecimento eleitoral -->
+    <div class="graficos-group">
+      <div class="graficos-section-title">Conhecimento sobre direitos eleitorais</div>
+      <div class="graficos-grid">
+
+        <div class="grafico-card">
+          <div class="grafico-label">Possui título de eleitor?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=1388151452&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Sabe onde tirar o título na sua cidade?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=1821700674&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Conhece os documentos para alistar (escala 1–5)</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=814774795&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Sabe como fazer a transferência do título?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=902080339&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Conhece o prazo para justificar ausência?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=386797185&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Conhece o aplicativo e-Título?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=1910312894&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Sabe justificar o voto sem ir ao cartório?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=514824916&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card">
+          <div class="grafico-label">Conhece as consequências da falta do título?</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=207424709&format=interactive" loading="lazy"></iframe>
+        </div>
+
+        <div class="grafico-card full">
+          <div class="grafico-label">Autoavaliação de conhecimento do sistema eleitoral</div>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHNGXucqS-uPWnTQVpFreIYjayooX6o98sT2UgF5gToJFgODW5M4WAkD3ImmVby8Wwc9UdXw0v2UAv/pubchart?oid=2058664373&format=interactive" loading="lazy"></iframe>
+        </div>
+
       </div>
-    -->
+    </div>
+
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <span class="section-label">Vozes da Pesquisa</span>
+    <h2 class="section-title depoimentos-header">O que os entrevistados disseram</h2>
+    <p class="section-desc">Respostas à pergunta: <em>"É importante que as pessoas tenham acesso a informações sobre seus direitos políticos?"</em></p>
+  </div>
+
+  <div class="depoimentos-marquee-wrap">
+    <div class="depoimentos-track" id="depoimentosTrack">
+      <!-- JS vai duplicar para o loop infinito -->
+    </div>
   </div>
 </section>
 
@@ -784,62 +801,16 @@
     <h2 class="section-title">Onde buscar mais informação</h2>
     <p class="section-desc">Links oficiais, endereços e apps para resolver tudo relacionado ao seu título e situação eleitoral.</p>
     <div class="contatos-grid">
-
-      <div class="contato-card">
-        <div class="contato-icon">⚖️</div>
-        <h3>TSE — Tribunal Superior Eleitoral</h3>
-        <p>Portal oficial com informações sobre alistamento, eleições e legislação.</p>
-        <a href="https://www.tse.jus.br" target="_blank">→ www.tse.jus.br</a>
-      </div>
-
-      <div class="contato-card">
-        <div class="contato-icon">🌐</div>
-        <h3>Título Net — Alistamento Online</h3>
-        <p>Tire, transfira ou regularize seu título sem sair de casa.</p>
-        <a href="https://titulo.tse.jus.br" target="_blank">→ titulo.tse.jus.br</a>
-        <span class="qrcode-hint">📱 QR Code disponível na cartilha</span>
-      </div>
-
-      <div class="contato-card">
-        <div class="contato-icon">🗓️</div>
-        <h3>Justificativa de Voto</h3>
-        <p>Justifique sua ausência nas eleições de forma rápida e gratuita.</p>
-        <a href="https://justificativa.tse.jus.br" target="_blank">→ justificativa.tse.jus.br</a>
-      </div>
-
-      <div class="contato-card">
-        <div class="contato-icon">📱</div>
-        <h3>App e-Título</h3>
-        <p>Seu título de eleitor digital. Disponível gratuitamente para Android e iOS.</p>
-        <a href="https://www.tse.jus.br/eleitor-e-eleicoes/aplicativos-do-tse/e-titulo" target="_blank">→ Baixar e-Título</a>
-        <span class="qrcode-hint">📱 QR Code disponível na cartilha</span>
-      </div>
-
-      <div class="contato-card">
-        <div class="contato-icon">🏛️</div>
-        <h3>23ª Zona Eleitoral — Água Boa/MT</h3>
-        <!--
-          🛠️ PARA EDITAR: Atualize o endereço e telefone diretamente com o cartório.
-          Sugestão: ligue no TRE-MT ou acesse https://www.tre-mt.jus.br para confirmar os dados.
-        -->
-        <p>Cartório eleitoral responsável pela região de Água Boa/MT.</p>
-        <p style="margin-top:0.5rem; color:var(--muted);">📍 Endereço: confirmar com o cartório</p>
-        <p style="color:var(--muted);">📞 Telefone: confirmar com o cartório</p>
-        <a href="https://www.tre-mt.jus.br" target="_blank">→ TRE-MT (Cuiabá)</a>
-      </div>
-
-      <div class="contato-card">
-        <div class="contato-icon">📖</div>
-        <h3>Legislação Eleitoral</h3>
-        <p>Constituição Federal (Art. 14–16) e Código Eleitoral (Lei nº 4.737/1965).</p>
-        <a href="https://www.planalto.gov.br/ccivil_03/leis/l4737compilado.htm" target="_blank">→ Código Eleitoral — Planalto.gov.br</a>
-      </div>
-
+      <div class="contato-card"><div class="contato-icon">⚖️</div><h3>TSE — Tribunal Superior Eleitoral</h3><p>Portal oficial com informações sobre alistamento, eleições e legislação.</p><a href="https://www.tse.jus.br" target="_blank">→ www.tse.jus.br</a></div>
+      <div class="contato-card"><div class="contato-icon">🌐</div><h3>Título Net — Alistamento Online</h3><p>Tire, transfira ou regularize seu título sem sair de casa.</p><a href="https://titulo.tse.jus.br" target="_blank">→ titulo.tse.jus.br</a><span class="qrcode-hint">📱 QR Code disponível na cartilha</span></div>
+      <div class="contato-card"><div class="contato-icon">🗓️</div><h3>Justificativa de Voto</h3><p>Justifique sua ausência nas eleições de forma rápida e gratuita.</p><a href="https://justificativa.tse.jus.br" target="_blank">→ justificativa.tse.jus.br</a></div>
+      <div class="contato-card"><div class="contato-icon">📱</div><h3>App e-Título</h3><p>Seu título de eleitor digital. Disponível gratuitamente para Android e iOS.</p><a href="https://www.tse.jus.br/eleitor-e-eleicoes/aplicativos-do-tse/e-titulo" target="_blank">→ Baixar e-Título</a><span class="qrcode-hint">📱 QR Code disponível na cartilha</span></div>
+      <div class="contato-card"><div class="contato-icon">🏛️</div><h3>23ª Zona Eleitoral — Água Boa/MT</h3><p>Cartório eleitoral responsável pela região de Água Boa/MT.</p><p style="margin-top:0.5rem; color:var(--muted);">📍 Endereço: confirmar com o cartório</p><p style="color:var(--muted);">📞 Telefone: confirmar com o cartório</p><a href="https://www.tre-mt.jus.br" target="_blank">→ TRE-MT (Cuiabá)</a></div>
+      <div class="contato-card"><div class="contato-icon">📖</div><h3>Legislação Eleitoral</h3><p>Constituição Federal (Art. 14–16) e Código Eleitoral (Lei nº 4.737/1965).</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l4737compilado.htm" target="_blank">→ Código Eleitoral — Planalto.gov.br</a></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>
     <strong>Cidadania & Democracia — UNIMT</strong> · Projeto de Extensão · Engenharia Agronômica<br>
@@ -857,24 +828,73 @@
   </p>
 </footer>
 
-<!-- BACK TO TOP -->
 <a href="#inicio" class="back-top" id="backTop">↑</a>
 
 <script>
-  // Mobile menu
+  // ── DEPOIMENTOS DATA ──
+  const depoimentos = [
+    "Sim, pois as pessoas podem ter problemas devido à falta de conhecimento político.",
+    "Sim, quanto mais informada é melhor para não ficar na bucha.",
+    "Sim, é importante porque ajuda as pessoas a entenderem seus direitos, votar com consciência e participar melhor da sociedade. Isso fortalece a democracia e evita manipulação.",
+    "No mundo de hoje é bom ter essa movimentação na internet, ainda mais para os jovens.",
+    "Sim, muito importante, pois devemos saber os nossos direitos, principalmente se tratando de política.",
+    "Sim, para as pessoas ter mais clareza, para sempre saber dos seus direitos.",
+    "Sim, é dever do brasileiro saber e ter conhecimento sobre os direitos políticos.",
+    "Sim, para evitar não votar, restrições no CPF e impossibilidade de passaporte.",
+    "É importante, pois se ela tiver o conhecimento eleitoral vai exercer sua cidadania escolhendo bons políticos e tendo conhecimento sobre seus projetos.",
+    "Sim, pois garante uma boa cidadania.",
+    "Para saber sobre os nossos direitos e ter as documentações em dia.",
+    "Por que nós somos os eleitores e precisamos saber a realidade.",
+    "Sim, porque quando as pessoas entendem seus direitos e sabem como funciona a eleição, fica mais fácil votar consciente e participar das decisões do país.",
+    "Sim, por que todas as pessoas têm que ter sua informação correta para não serem enganadas.",
+    "Todos temos que ter acesso e conhecimento sobre os nossos direitos.",
+    "Devemos correr atrás dos nossos direitos políticos e ficar atentos do que temos ou não direito.",
+    "Sim, porque a política é essencial para nós, de forma direta e indireta, no dia a dia — então é importante escolher bem quem a gente confia o nosso voto.",
+    "Sim, para garantir o seu direito de voto e os benefícios que você tem se estiver com o título em dias.",
+    "Sim, para tentar fazer um país mais justo.",
+    "Sim, é importante porque precisamos dar importância aos nossos direitos sabendo quem colocar nas decisões.",
+    "Quando falamos em direitos e deveres, as pessoas têm que saber de todas as informações cabíveis para auxiliar na hora crucial de tomada de decisões.",
+    "É um dever ter o conhecimento do sistema, para que você tenha uma mente mais aberta e fluente na hora de fazer suas escolhas nas eleições.",
+    "Sim, pois é um caso obrigatório e apesar da tecnologia muitas pessoas não têm esse conhecimento.",
+    "Sim, para ficar mais entendido dos assuntos.",
+  ];
+
+  // Embaralha e monta o carrossel duplicado (para loop infinito)
+  function shuffle(arr) {
+    return [...arr].sort(() => Math.random() - 0.5);
+  }
+
+  function buildMarquee() {
+    const track = document.getElementById('depoimentosTrack');
+    const items = shuffle(depoimentos);
+    // Duplica para o loop seamless
+    const all = [...items, ...items];
+    track.innerHTML = all.map(text => `
+      <div class="depoimento-card">
+        <p class="depoimento-text">${text}</p>
+        <span class="depoimento-dot"></span>
+      </div>
+    `).join('');
+  }
+
+  buildMarquee();
+
+  // ── NAV / MENU ──
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
-  // Back to top
+
+  // ── BACK TO TOP ──
   window.addEventListener('scroll', () => {
-    const btn = document.getElementById('backTop');
-    btn.classList.toggle('visible', window.scrollY > 400);
+    document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
   });
-  // Close menu on link click
+
+  // ── CLOSE MENU ON LINK CLICK ──
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
-  // Scroll reveal
+
+  // ── SCROLL REVEAL ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -883,7 +903,8 @@
       }
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.direito-card, .team-card, .contato-card, .sobre-card, .info-card').forEach(el => {
+
+  document.querySelectorAll('.direito-card, .team-card, .contato-card, .sobre-card, .info-card, .grafico-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
